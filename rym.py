@@ -4,7 +4,6 @@ This program takes a command line arguments of a
 band/artist name and goes to their rym page.
 
 Later modify this for films and releases as well.
-But first i need to get unblocked from rym
 """
 import sys, pyperclip, webbrowser
 
