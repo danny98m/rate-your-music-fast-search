@@ -16,23 +16,24 @@ Usage:
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces //NOT YET IMPLEMENTED
 
+    Conversely if no arguments are given, artist name in clipboard will be searched.
+
 TODO:
-    get rid of mutated variables
 """
 import sys, pyperclip, webbrowser
 
 def searchRym():
     if len(sys.argv) > 1:
-        artist = '_'.join(sys.argv[1:])
-        artist = artist.lower()
+        artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
+        lowerArtist = artist.lower()                # set to lower
     else:   
         # if no arguments given just use the clipboard
-        artist = pyperclip.paste()
-        artist = artist.lower()
-        artist = artist.split(' ')
-        artist = '_'.join(artist)
+        artist = pyperclip.paste()                  # paste from clipboard
+        splitArtist = artist.split()                # split artist by whitespace
+        joinedArtist = '_'.join(splitArtist)        # join by _ if necessary 
+        lowerArtist = joinedArtist.lower()          # set to lower
 
-    urlArtist = f'https://rateyourmusic.com/artist/{artist}'
+    urlArtist = f'https://rateyourmusic.com/artist/{lowerArtist}'
     # here i should check url if does not exist search as film instead
 
     webbrowser.open(urlArtist)
