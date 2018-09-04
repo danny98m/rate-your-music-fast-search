@@ -10,15 +10,15 @@ import sys, pyperclip, webbrowser
 def searchRym():
 	if len(sys.argv) > 1:
 		artist = '_'.join(sys.argv[1:])
-		artist = artist.lower()
-	else:
+       		artist = artist.lower()
+         else:	
 		# if no arguments given just use the clipboard
 		artist = pyperclip.paste()
 		artist = artist.lower()
 
-	url = f'https://rateyourmusic.com/artist/{artist}'
+	urlArtist = f'https://rateyourmusic.com/artist/{artist}'
 
-	webbrowser.open(url)
+	webbrowser.open(urlArtist)
 
 
 def main():
