@@ -1,4 +1,4 @@
-#Rate Your Music Fast Search
+# Rate Your Music Fast Search
 This program utilizes command line arguments to quickly search the databases of rateyourmusic.com.
 
 Usage:
