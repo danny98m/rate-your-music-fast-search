@@ -20,7 +20,7 @@ TODO:
     add search for albums/singles/eps/charts/lists/genres/literally anything its pretty easy
     to expand upon.
 """
-import sys, pyperclip, webbrowser
+import sys, webbrowser
 
 def searchFilm(funFilm):
     urlFilm = f'https://rateyourmusic.com/film/{funFilm}'
@@ -41,12 +41,8 @@ def searchRym():
             lowerArtist = artist.lower()                # set to lower
             search = searchArtist(lowerArtist)
     else:   
-        # if no arguments given just use the clipboard
-        artist = pyperclip.paste()                  # paste from clipboard
-        splitArtist = artist.split()                # split artist by whitespace
-        joinedArtist = '_'.join(splitArtist)        # join by _ if necessary 
-        lowerArtist = joinedArtist.lower()          # set to lower
-        searchArtist(lowerArtist)
+        # if no arguments given just go to home page
+        search = "https://rateyourmusic.com"
 
     webbrowser.open(search)                      # search web for artist
 
