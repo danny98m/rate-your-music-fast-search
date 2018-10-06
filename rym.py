@@ -24,21 +24,33 @@ TODO:
 """
 import sys, pyperclip, webbrowser
 
+def searchFilm(funFilm):
+    urlFilm = f'https://rateyourmusic.com/film/{funFilm}'
+    return urlFilm
+def searchArtist(coolArtist):
+    urlArtist = f'https://rateyourmusic.com/artist/{coolArtist}'
+    return urlArtist
+
 def searchRym():
     if len(sys.argv) > 1:
-        artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
-        lowerArtist = artist.lower()                # set to lower
+        # check if user wants to search for things besides artists
+        if (sys.argv[1] == "film"):
+            film = '_'.join(sys.argv[2:])
+            lowerFilm = film.lower()
+            search = searchFilm(lowerFilm)
+        else:
+            artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
+            lowerArtist = artist.lower()                # set to lower
+            search = searchArtist(lowerArtist)
     else:   
         # if no arguments given just use the clipboard
         artist = pyperclip.paste()                  # paste from clipboard
         splitArtist = artist.split()                # split artist by whitespace
         joinedArtist = '_'.join(splitArtist)        # join by _ if necessary 
         lowerArtist = joinedArtist.lower()          # set to lower
+        searchArtist(lowerArtist)
 
-    urlArtist = f'https://rateyourmusic.com/artist/{lowerArtist}'
-    # here i should check url if does not exist search as film instead
-
-    webbrowser.open(urlArtist)                      # search web for artist
+    webbrowser.open(search)                      # search web for artist
 
 def main():
     searchRym()
