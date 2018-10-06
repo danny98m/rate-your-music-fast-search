@@ -13,6 +13,7 @@ it returns a 404 is not possible.
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
+    Album Search: rym.py album name of album seperated by spaces
 
     Conversely if no arguments are given, artist name in clipboard will be searched.
 
