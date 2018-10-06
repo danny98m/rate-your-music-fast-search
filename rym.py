@@ -1,6 +1,6 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 """
-This program takes a command line arguments of a
+This program takes command line arguments of a
 band/artist name and goes to their rym page.
 
 Later modify this for films and releases as well.
@@ -10,8 +10,6 @@ rym––they will block you. So some things that could
 easily be done by first making a request to check if
 it returns a 404 is not possible. 
 
-Look in to urllib instead.
-
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces //NOT YET IMPLEMENTED
@@ -19,6 +17,10 @@ Usage:
     Conversely if no arguments are given, artist name in clipboard will be searched.
 
 TODO:
+    add search for other things.
+    best way to do all of this would be just have user enter name of work of art and use requests to
+    finally find correct one. only exception would be release because user would still need to type 
+    the artist
 """
 import sys, pyperclip, webbrowser
 
@@ -36,8 +38,7 @@ def searchRym():
     urlArtist = f'https://rateyourmusic.com/artist/{lowerArtist}'
     # here i should check url if does not exist search as film instead
 
-    webbrowser.open(urlArtist)
-
+    webbrowser.open(urlArtist)                      # search web for artist
 
 def main():
     searchRym()
