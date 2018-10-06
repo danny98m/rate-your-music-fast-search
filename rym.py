@@ -12,15 +12,13 @@ it returns a 404 is not possible.
 
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
-    Film Search: rym.py film name of film seperated by spaces //NOT YET IMPLEMENTED
+    Film Search: rym.py film name of film seperated by spaces
 
     Conversely if no arguments are given, artist name in clipboard will be searched.
 
 TODO:
-    add search for other things.
-    best way to do all of this would be just have user enter name of work of art and use requests to
-    finally find correct one. only exception would be release because user would still need to type 
-    the artist
+    add search for albums/singles/eps/charts/lists/genres/literally anything its pretty easy
+    to expand upon.
 """
 import sys, pyperclip, webbrowser
 
