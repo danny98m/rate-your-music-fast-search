@@ -22,9 +22,14 @@ TODO:
 """
 import sys, webbrowser
 
+def searchAlbum(sickAlbum, coolArtist):
+    urlAlbum = f'https://rateyourmusic.com/release/album/{coolArtist}/{sickAlbum}'
+    return urlAlbum
+
 def searchFilm(funFilm):
     urlFilm = f'https://rateyourmusic.com/film/{funFilm}'
     return urlFilm
+
 def searchArtist(coolArtist):
     urlArtist = f'https://rateyourmusic.com/artist/{coolArtist}'
     return urlArtist
@@ -36,6 +41,14 @@ def searchRym():
             film = '_'.join(sys.argv[2:])
             lowerFilm = film.lower()
             search = searchFilm(lowerFilm)
+        elif (sys.argv[1] == "album"):
+            album = '_'.join(sys.argv[2:])
+            lowerAlbum = album.lower()
+            artist = input("Enter Artist Name: ")
+            splitArtist = artist.split()
+            joinedArtist = '_'.join(splitArtist)
+            lowerArtist = joinedArtist.lower()
+            search = searchAlbum(lowerAlbum, lowerArtist)
         else:
             artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
             lowerArtist = artist.lower()                # set to lower
