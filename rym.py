@@ -22,7 +22,6 @@ Usage:
     Genre Search: rym.py genre name of genre seperated by spaces
     Year Search: rym.py year yearDate (search by decade by adding s at end. Example: 1990s)
 
-    Conversely if no arguments are given, artist name in clipboard will be searched.
     **Adding more search terms is not worth the effort of automating**
 
     TODO:
