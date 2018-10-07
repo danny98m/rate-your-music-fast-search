@@ -21,11 +21,12 @@ Usage:
     Album Search: rym.py album name of album seperated by spaces (THIS WILL ONLY WORK FOR FULL LENGTHS)
     Genre Search: rym.py genre name of genre seperated by spaces
     Year Search: rym.py year yearDate (search by decade by adding s at end. Example: 1990s)
+    Top Albums of All Time: rym.py top
+    Top Films of All Time: rym.py topfilms
 
     **Adding more search terms is not worth the effort of automating**
 
     TODO:
-    Add top films
     ADD help command
     Make album search not require input can look for --- or something to seperate
 """
@@ -78,7 +79,7 @@ def searchRym():
             lowerFilm = film.lower()
             search = searchFilm(lowerFilm)
         # Give top of all time films
-        elif (sys.argv == "topfilms"):
+        elif (sys.argv[1] == "topfilms"):
             search = "https://rateyourmusic.com/films/chart"
         # Give top of all time chart for a given genre
         elif (sys.argv[1] == "genre"):
