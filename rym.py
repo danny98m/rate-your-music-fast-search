@@ -35,7 +35,7 @@ import sys, webbrowser
 
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
-    problemPunctuations = [':', ',', '.', '!']
+    problemPunctuations = [':', ',', '.', '!', '?']
     for puncType, punct in enumerate(problemPunctuations):
         while problemPunctuations[puncType] in userInput:
             problemCharIndex = userInput.index(punct)
