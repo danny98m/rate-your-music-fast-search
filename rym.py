@@ -28,7 +28,6 @@ Usage:
     Add top films
     ADD help command
     Make album search not require input can look for --- or something to seperate
-    Make punct list into tuple
 """
 import sys, webbrowser
 
@@ -78,6 +77,9 @@ def searchRym():
             film = '_'.join(sys.argv[2:])
             lowerFilm = film.lower()
             search = searchFilm(lowerFilm)
+        # Give top of all time films
+        elif (sys.argv == "topfilms"):
+            search = "https://rateyourmusic.com/films/chart"
         # Give top of all time chart for a given genre
         elif (sys.argv[1] == "genre"):
             genre = '+'.join(sys.argv[2:])
