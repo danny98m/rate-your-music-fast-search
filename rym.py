@@ -29,6 +29,9 @@ Usage:
 """
 import sys, webbrowser
 
+#--------Display Help Menu---------------------
+# Called when --help is entered
+# Essentially just the githup README.md
 def helpMenu():
     print("""
 Artist Search: rym.py name of artist/band seperated by spaces
@@ -72,7 +75,9 @@ General Input Info:
         * Wu-Tang clan as wu tang clan 
         * Include hyphens if genre searching
         """)
+#---------------------------------
 
+#-------Check and Edit Input---------
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
     problemPunctuations = (':', ',', '.', '!', '?')
@@ -84,8 +89,10 @@ def checkValid(userInput):
             else:
                 userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
     return userInput
+#------------------------------------
 
-
+#---Specific Search Link Functions---------
+# Create the proper url
 def searchYear(greatYear):
     urlYear = f'https://rateyourmusic.com/charts/top/album/{greatYear}'
     return urlYear
@@ -111,7 +118,9 @@ def searchArtist(coolArtist):
     coolArtist = checkValid(coolArtist)
     urlArtist = f'https://rateyourmusic.com/artist/{coolArtist}'
     return urlArtist
+#--------------------------------
 
+#---Determine What User Wants to Search Then Open Browser----
 def searchRym():
     if len(sys.argv) > 1:
         # Search by film
@@ -161,6 +170,7 @@ def searchRym():
         search = "https://rateyourmusic.com"
 
     webbrowser.open(search)                      # search web for artist
+#----------------------------------------
 
 def main():
     searchRym()
