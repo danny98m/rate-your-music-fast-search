@@ -78,13 +78,11 @@ General Input Info:
 def checkValid(userInput):
     # Punctuations that make rym mad
     problemPunctuations = (':', ',', '.', '!', '?')
-    needsChange = False
 
     # Remove the problems
     for puncType, punct in enumerate(problemPunctuations):
         # Check if there are any problems in input
         while problemPunctuations[puncType] in userInput:
-            needsChange = True
             problemCharIndex = userInput.index(punct)   # holds index with the unsupported punct
             # If '!' or '?' just remove it
             if puncType == '!' or puncType == '?':
