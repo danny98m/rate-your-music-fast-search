@@ -13,13 +13,10 @@ it returns a 404 is not possible.
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
-    Album Search: rym.py album name of album seperated by spaces
+    Album Search: rym.py album name of album seperated by spaces (THIS WILL ONLY WORK FOR FULL LENGTHS)
 
     Conversely if no arguments are given, artist name in clipboard will be searched.
-
-TODO:
-    add search for albums/singles/eps/charts/lists/genres/literally anything its pretty easy
-    to expand upon.
+    **Adding more search terms is not worth the effort of automating**
 """
 import sys, webbrowser
 
@@ -37,11 +34,12 @@ def searchArtist(coolArtist):
 
 def searchRym():
     if len(sys.argv) > 1:
-        # check if user wants to search for things besides artists
+        # Search by film
         if (sys.argv[1] == "film"):
             film = '_'.join(sys.argv[2:])
             lowerFilm = film.lower()
             search = searchFilm(lowerFilm)
+        # Search by album
         elif (sys.argv[1] == "album"):
             album = '_'.join(sys.argv[2:])
             lowerAlbum = album.lower()
@@ -50,6 +48,9 @@ def searchRym():
             joinedArtist = '_'.join(splitArtist)
             lowerArtist = joinedArtist.lower()
             search = searchAlbum(lowerAlbum, lowerArtist)
+        # Top of all time
+        elif (sys.argv[1] == "top"):
+            search = "https://rateyourmusic.com/customchart"
         else:
             artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
             lowerArtist = artist.lower()                # set to lower
