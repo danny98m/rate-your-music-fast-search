@@ -22,10 +22,6 @@ Usage:
     Top Films of All Time: rym.py topfilms
 
     **Adding more search terms is not worth the effort of automating**
-
-    TODO:
-    Remove mutated variables
-    DOCUMANTATION IT UP
 """
 import sys, webbrowser
 
@@ -173,7 +169,7 @@ def searchRym():
             joinedArtist = '_'.join(splitArtist)
             lowerArtist = joinedArtist.lower()
             #------------------------------
-            
+
             search = searchAlbum(lowerAlbum, lowerArtist)
 
         # Top of all time
