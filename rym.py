@@ -14,6 +14,8 @@ Usage:
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
     Album Search: rym.py album name of album seperated by spaces (THIS WILL ONLY WORK FOR FULL LENGTHS)
+    Genre Search: rym.py genre name of genre seperated by spaces
+    Year Search: rym.py year yearDate (search by decade by adding s at end. Example: 1990s)
 
     Conversely if no arguments are given, artist name in clipboard will be searched.
     **Adding more search terms is not worth the effort of automating**
