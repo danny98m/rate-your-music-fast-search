@@ -18,7 +18,7 @@ This program utilizes command line arguments to quickly search the databases of 
   * **Some genres require punctuation**
      * Example: rym.py genre post-punk
      
-* Year Search: rym.py **year** *yearDate* (search decade by adding s at end. Example: 1990s)
+* Year Search: rym.py **year** *yearDate*
   * Brings user to top of all time for given year.
   * Example: rym.py year 1977
   * You can also search by decade
