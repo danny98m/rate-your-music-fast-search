@@ -36,11 +36,14 @@ import sys, webbrowser
 
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
-    problemPunctuations = [':', ',', '.']
+    problemPunctuations = [':', ',', '.', '!']
     for puncType, punct in enumerate(problemPunctuations):
         while problemPunctuations[puncType] in userInput:
             problemCharIndex = userInput.index(punct)
-            userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
+            if puncType == '!':
+                userInput = userInput[:problemCharIndex] + userInput[problemCharIndex+1:]
+            else:
+                userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
     return userInput
 
 
@@ -53,6 +56,7 @@ def searchGenre(engagingGenre):
     return urlGenre
 
 def searchAlbum(sickAlbum, coolArtist):
+    coolArtist = checkValid(coolArtist)
     sickAlbum = checkValid(sickAlbum)
     urlAlbum = f'https://rateyourmusic.com/release/album/{coolArtist}/{sickAlbum}'
     return urlAlbum
@@ -65,6 +69,7 @@ def searchFilm(funFilm):
 def searchArtist(coolArtist):
     if coolArtist == "toto":
         webbrowser.open('https://www.youtube.com/watch?v=FTQbiNvZqaY')
+    coolArtist = checkValid(coolArtist)
     urlArtist = f'https://rateyourmusic.com/artist/{coolArtist}'
     return urlArtist
 
