@@ -25,7 +25,6 @@ Usage:
     **Adding more search terms is not worth the effort of automating**
 
     TODO:
-    check for artists and albums as well
     Add top films
     ADD help command
     Make album search not require input can look for --- or something to seperate
@@ -35,7 +34,7 @@ import sys, webbrowser
 
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
-    problemPunctuations = [':', ',', '.', '!', '?']
+    problemPunctuations = (':', ',', '.', '!', '?')
     for puncType, punct in enumerate(problemPunctuations):
         while problemPunctuations[puncType] in userInput:
             problemCharIndex = userInput.index(punct)
