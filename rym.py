@@ -10,6 +10,10 @@ rym––they will block you. So some things that could
 easily be done by first making a request to check if
 it returns a 404 is not possible. 
 
+
+Input Info:
+    Write & as and 
+    Don't include apostrophes or accent marks
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
@@ -25,12 +29,14 @@ Usage:
     Add to invalid punctuations
     check for artists and albums as well
     Add top films
+    ADD help command
+    Make album search not require input can look for --- or something to seperate
 """
 import sys, webbrowser
 
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
-    problemPunctuations = [':', ","]
+    problemPunctuations = [':', ',', '.']
     for puncType, punct in enumerate(problemPunctuations):
         while problemPunctuations[puncType] in userInput:
             problemCharIndex = userInput.index(punct)
