@@ -22,6 +22,9 @@ Usage:
 
     TODO: Take care of certain punctuation issues
     Add toto easter egg
+    Add to invalid punctuations
+    check for artists and albums as well
+    Add top films
 """
 import sys, webbrowser
 
@@ -44,7 +47,7 @@ def searchGenre(engagingGenre):
     return urlGenre
 
 def searchAlbum(sickAlbum, coolArtist):
-    sickAlbum = checkValid(funFilm)
+    sickAlbum = checkValid(sickAlbum)
     urlAlbum = f'https://rateyourmusic.com/release/album/{coolArtist}/{sickAlbum}'
     return urlAlbum
 
