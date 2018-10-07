@@ -21,5 +21,11 @@ Usage:
   * Example: rym.py year 1977
   * You can also search by decade
      * Example: rym.py year 1980s 
+* Top Albums of All Time: rym.py **top**
+  * Brings user to overall top of all time for albums
+* Top Films of All Time: rym.py **topfilms**
+  * Brings user to overall top of all time for films
+* RYM home page: rym.py
+  * Brings user to rateyourmusic.com
 
 _**Album Search** will only work for full lengths. Adding every release type is more effort than automating search is worth._
