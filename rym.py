@@ -12,13 +12,13 @@ it returns a 404 is not possible.
 
 
 Input Info:
-    Write & as and 
+    Write '&'' as and 
     Don't include apostrophes or accent marks
     Seperate hypenated words: wu-tang clan entered as wu tang clan
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
-    Album Search: rym.py album name of album seperated by spaces (THIS WILL ONLY WORK FOR FULL LENGTHS)
+    Album Search: rym.py album name of album seperated by spaces -- artist name sep by spaces(THIS WILL ONLY WORK FOR FULL LENGTHS)
     Genre Search: rym.py genre name of genre seperated by spaces
     Year Search: rym.py year yearDate (search by decade by adding s at end. Example: 1990s)
     Top Albums of All Time: rym.py top
@@ -91,12 +91,19 @@ def searchRym():
             search = searchYear(year)
         # Search by album
         elif (sys.argv[1] == "album"):
-            album = '_'.join(sys.argv[2:])
+            album = ' '.join(sys.argv[2:])
+            split = album.split('--')
+            print(split)
+            album = split[0]
+            album = album.split()
+            album = '_'.join(album)
             lowerAlbum = album.lower()
-            artist = input("Enter Artist Name: ")
-            splitArtist = artist.split()
-            joinedArtist = '_'.join(splitArtist)
-            lowerArtist = joinedArtist.lower()
+
+            artist = split[1]
+            artist = artist.split()
+            artist = '_'.join(artist)
+            lowerArtist = artist.lower()
+
             search = searchAlbum(lowerAlbum, lowerArtist)
         # Top of all time
         elif (sys.argv[1] == "top"):
