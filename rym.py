@@ -31,6 +31,7 @@ Usage:
     Add top films
     ADD help command
     Make album search not require input can look for --- or something to seperate
+    Make punct list into tuple
 """
 import sys, webbrowser
 
