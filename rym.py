@@ -14,6 +14,7 @@ it returns a 404 is not possible.
 Input Info:
     Write & as and 
     Don't include apostrophes or accent marks
+    Seperate hypenated words: wu-tang clan entered as wu tang clan
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
