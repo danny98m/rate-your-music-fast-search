@@ -25,7 +25,6 @@ Usage:
     **Adding more search terms is not worth the effort of automating**
 
     TODO:
-    Add to invalid punctuations - ! are a special case to look at
     check for artists and albums as well
     Add top films
     ADD help command
