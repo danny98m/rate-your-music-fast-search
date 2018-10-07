@@ -41,7 +41,7 @@ def checkValid(userInput):
     for puncType, punct in enumerate(problemPunctuations):
         while problemPunctuations[puncType] in userInput:
             problemCharIndex = userInput.index(punct)
-            if puncType == '!':
+            if puncType == '!' or puncType == '?':
                 userInput = userInput[:problemCharIndex] + userInput[problemCharIndex+1:]
             else:
                 userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
