@@ -25,13 +25,13 @@ This program utilizes command line arguments to quickly search the databases of 
      * Example: rym.py year 1980s 
      
 * Top Albums of All Time: rym.py **top**
-  * Brings user to overall top of all time for albums
+  * Brings user to overall top of all time for albums.
   
 * Top Films of All Time: rym.py **topfilms**
-  * Brings user to overall top of all time for films
+  * Brings user to overall top of all time for films.
   
 * RYM Home Page: rym.py
-  * Brings user to rateyourmusic.com
+  * Brings user to rateyourmusic.com.
   
 * Bring Up Help Menu: rym.py **--help**
 
