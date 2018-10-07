@@ -14,7 +14,7 @@ it returns a 404 is not possible.
 Input Info:
     Write '&'' as and 
     Don't include apostrophes or accent marks
-    Seperate hypenated words: wu-tang clan entered as wu tang clan
+    Seperate hypenated words: wu-tang clan entered as wu tang clan !!UNLESS IT'S A GENRE NAME
 Usage: 
     Artist Search: rym.py names of artist/band seperated by spaces
     Film Search: rym.py film name of film seperated by spaces
@@ -27,10 +27,54 @@ Usage:
     **Adding more search terms is not worth the effort of automating**
 
     TODO:
-    ADD help command
-    Make album search not require input can look for --- or something to seperate
+    Remove mutated variables
+    DOCUMANTATION IT UP
 """
 import sys, webbrowser
+
+def helpMenu():
+    print("""
+Artist Search: rym.py name of artist/band seperated by spaces
+    * Brings user to entered artist's page.
+    * Example: rym.py my bloody valentine
+
+Film Search: rym.py film name of film seperated by spaces
+    * Brings user to entered film's page.
+    * Example: rym.py film eternal sunshine of the spotless mind
+
+Album Search: rym.py album name of album seperated by spaces -- artist name seperated by spaces
+    * Brings user to entered album's page.
+    * Example: rym.py album my beautiful dark twisted fantasy -- kanye west
+    * ONLY WORKS FOR FULL LENGTH ALBUMS
+
+Genre Search: rym.py genre name of genre seperated by spaces
+    * Brings user to top of all time list for entered genre.
+    * Example: rym.py genre progressive rock
+    * Some genres require punctuation
+        * Example: rym.py genre post-punk
+
+Year Search: rym.py year yearDate
+    * Brings user to top of all time for given year.
+    * Example: rym.py year 1977
+    * You can also search by decade
+        Example: rym.py year 1980s
+
+Top Albums of All Time: rym.py top
+    * Brings user to overall top of all time for albums.
+
+Top Films of All Time: rym.py topfilms
+    * Brings user to overall top of all time for films.
+
+RYM Home Page: rym.py
+    * Brings user to rateyourmusic.com.
+
+General Input Info:
+    * Write '&'' as and 
+    * Don't include apostrophes or accent marks
+    * Seperate hypenated words: 
+        * Wu-Tang clan as wu tang clan 
+        * Include hyphens if genre searching
+        """)
 
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
@@ -108,6 +152,9 @@ def searchRym():
         # Top of all time
         elif (sys.argv[1] == "top"):
             search = "https://rateyourmusic.com/customchart"
+        elif (sys.argv[1] == "--help"):
+            helpMenu()
+            sys.exit()
         else:
             artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
             lowerArtist = artist.lower()                # set to lower
