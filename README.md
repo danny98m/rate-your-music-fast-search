@@ -3,8 +3,8 @@ This program utilizes command line arguments to quickly search the databases of 
 
 ## Usage:
   * Artist Search: rym.py *name of artist/band seperated by spaces*
-  * Brings user to entered artist's page.
-  * Example: rym.py my bloody valentine  
+    * Brings user to entered artist's page.
+    * Example: rym.py my bloody valentine  
 * Film Search: rym.py **film** *name of film seperated by spaces*
   * Brings user to entered film's page.
   * Example: rym.py film eternal sunshine of the spotless mind
