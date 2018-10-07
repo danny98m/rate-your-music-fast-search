@@ -80,15 +80,22 @@ General Input Info:
 #-------Check and Edit Input---------
 # Removes certain characters from input that rym doesn't like
 def checkValid(userInput):
+    # Punctuations that make rym mad
     problemPunctuations = (':', ',', '.', '!', '?')
+
+    # Remove the problems
     for puncType, punct in enumerate(problemPunctuations):
+        # Check if there are any problems in input
         while problemPunctuations[puncType] in userInput:
-            problemCharIndex = userInput.index(punct)
+            problemCharIndex = userInput.index(punct)   # holds index with the unsupported punct
+            # If '!' or '?' just remove it
             if puncType == '!' or puncType == '?':
-                userInput = userInput[:problemCharIndex] + userInput[problemCharIndex+1:]
+                fixedInput = userInput[:problemCharIndex] + userInput[problemCharIndex+1:]
+            # Other wise replace punt with a '_'
             else:
-                userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
-    return userInput
+                fixedInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
+
+    return fixedInput
 #------------------------------------
 
 #---Specific Search Link Functions---------
