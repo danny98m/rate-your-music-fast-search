@@ -109,20 +109,22 @@ def searchGenre(engagingGenre):
     return urlGenre
 
 def searchAlbum(sickAlbum, coolArtist):
-    coolArtist = checkValid(coolArtist)
-    sickAlbum = checkValid(sickAlbum)
+    coolArtist = checkValid(coolArtist)     # fix artist name
+    sickAlbum = checkValid(sickAlbum)       # fix album name
     urlAlbum = f'https://rateyourmusic.com/release/album/{coolArtist}/{sickAlbum}'
     return urlAlbum
 
 def searchFilm(funFilm):
-    funFilm = checkValid(funFilm)
+    funFilm = checkValid(funFilm)           # fix film name
     urlFilm = f'https://rateyourmusic.com/film/{funFilm}'
     return urlFilm
 
 def searchArtist(coolArtist):
+    # :-)
     if coolArtist == "toto":
         webbrowser.open('https://www.youtube.com/watch?v=FTQbiNvZqaY')
-    coolArtist = checkValid(coolArtist)
+
+    coolArtist = checkValid(coolArtist)     # fix artist name
     urlArtist = f'https://rateyourmusic.com/artist/{coolArtist}'
     return urlArtist
 #--------------------------------
