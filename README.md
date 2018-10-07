@@ -30,7 +30,9 @@ This program utilizes command line arguments to quickly search the databases of 
 * Top Films of All Time: rym.py **topfilms**
   * Brings user to overall top of all time for films
   
-* RYM home page: rym.py
+* RYM Home Page: rym.py
   * Brings user to rateyourmusic.com
+  
+* Bring Up Help Menu: rym.py **--help**
 
 _**Album Search** will only work for full lengths. Adding every release type is more effort than automating search is worth._
