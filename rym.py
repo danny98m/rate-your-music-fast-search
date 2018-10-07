@@ -26,7 +26,7 @@ Usage:
 
     TODO: Take care of certain punctuation issues
     Add toto easter egg
-    Add to invalid punctuations
+    Add to invalid punctuations - ! are a special case to look at
     check for artists and albums as well
     Add top films
     ADD help command
@@ -64,6 +64,8 @@ def searchFilm(funFilm):
     return urlFilm
 
 def searchArtist(coolArtist):
+    if coolArtist == "toto":
+        webbrowser.open('https://www.youtube.com/watch?v=FTQbiNvZqaY')
     urlArtist = f'https://rateyourmusic.com/artist/{coolArtist}'
     return urlArtist
 
