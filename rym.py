@@ -20,6 +20,10 @@ Usage:
 """
 import sys, webbrowser
 
+def searchGenre(engagingGenre):
+    urlGenre = f'https://rateyourmusic.com/customchart?page=1&chart_type=top&type=album&year=alltime&genre_include=1&genres={engagingGenre}&include_child_genres=t&include=both&limit=none&countries='
+    return urlGenre
+
 def searchAlbum(sickAlbum, coolArtist):
     urlAlbum = f'https://rateyourmusic.com/release/album/{coolArtist}/{sickAlbum}'
     return urlAlbum
@@ -39,6 +43,10 @@ def searchRym():
             film = '_'.join(sys.argv[2:])
             lowerFilm = film.lower()
             search = searchFilm(lowerFilm)
+        # Give top of all time chart for a given genre
+        elif (sys.argv[1] == "genre"):
+            genre = '+'.join(sys.argv[2:])
+            search = searchGenre(genre)
         # Search by album
         elif (sys.argv[1] == "album"):
             album = '_'.join(sys.argv[2:])
