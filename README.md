@@ -17,5 +17,9 @@ Usage:
   * **Some genres require punctuation**
      * Example: rym.py genre post-punk
 * Year Search: rym.py **year** *yearDate* (search decade by adding s at end. Example: 1990s)
+  * Brings user to top of all time for given year.
+  * Example: rym.py year 1977
+  * You can also search by decade
+     * Example: rym.py year 1980s 
 
 _**Album Search** will only work for full lengths. Adding every release type is more effort than automating search is worth._
