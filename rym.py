@@ -82,20 +82,23 @@ General Input Info:
 def checkValid(userInput):
     # Punctuations that make rym mad
     problemPunctuations = (':', ',', '.', '!', '?')
+    needsChange = False
 
     # Remove the problems
     for puncType, punct in enumerate(problemPunctuations):
         # Check if there are any problems in input
         while problemPunctuations[puncType] in userInput:
+            needsChange = True
             problemCharIndex = userInput.index(punct)   # holds index with the unsupported punct
             # If '!' or '?' just remove it
             if puncType == '!' or puncType == '?':
-                fixedInput = userInput[:problemCharIndex] + userInput[problemCharIndex+1:]
+                userInput = userInput[:problemCharIndex] + userInput[problemCharIndex+1:]
+                
             # Other wise replace punt with a '_'
             else:
-                fixedInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
+                userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
 
-    return fixedInput
+    return userInput
 #------------------------------------
 
 #---Specific Search Link Functions---------
@@ -137,39 +140,47 @@ def searchRym():
             film = '_'.join(sys.argv[2:])
             lowerFilm = film.lower()
             search = searchFilm(lowerFilm)
+
         # Give top of all time films
         elif (sys.argv[1] == "topfilms"):
             search = "https://rateyourmusic.com/films/chart"
+
         # Give top of all time chart for a given genre
         elif (sys.argv[1] == "genre"):
             genre = '+'.join(sys.argv[2:])
             search = searchGenre(genre)
+
         # Give top albums of given year (or decade)
         elif (sys.argv[1] == "year"):
             year = sys.argv[2]
             search = searchYear(year)
+
         # Search by album
         elif (sys.argv[1] == "album"):
-            album = ' '.join(sys.argv[2:])
-            split = album.split('--')
-            print(split)
-            album = split[0]
+            userIn = ' '.join(sys.argv[2:])
+            splitInput = userIn.split('--')
+            album = splitInput[0]
             album = album.split()
             album = '_'.join(album)
             lowerAlbum = album.lower()
 
-            artist = split[1]
+            artist = splitInput[1]
             artist = artist.split()
             artist = '_'.join(artist)
             lowerArtist = artist.lower()
 
             search = searchAlbum(lowerAlbum, lowerArtist)
+
         # Top of all time
         elif (sys.argv[1] == "top"):
             search = "https://rateyourmusic.com/customchart"
+
+        # Help menu
         elif (sys.argv[1] == "--help"):
             helpMenu()
             sys.exit()
+
+        # Artist search by default
         else:
             artist = '_'.join(sys.argv[1:])             # join artist name by _ if necessary
             lowerArtist = artist.lower()                # set to lower
