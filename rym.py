@@ -1,15 +1,12 @@
-#!/usr/bin/env python3
-"""
-This program takes command line arguments of a
-band/artist name and goes to their rym page.
+#! /usr/bin/env python3
 
-Later modify this for films and releases as well.
+"""
+This program searches rym based on certain arguments
 
 Unfortunately, you cannot make requests on 
 rym––they will block you. So some things that could
 easily be done by first making a request to check if
 it returns a 404 is not possible. 
-
 
 Input Info:
     Write '&'' as and 
