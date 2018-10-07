@@ -19,8 +19,21 @@ Usage:
 
     Conversely if no arguments are given, artist name in clipboard will be searched.
     **Adding more search terms is not worth the effort of automating**
+
+    TODO: Take care of certain punctuation issues
+    Add toto easter egg
 """
 import sys, webbrowser
+
+# Removes certain characters from input that rym doesn't like
+def checkValid(userInput):
+    problemPunctuations = [':', ","]
+    for puncType, punct in enumerate(problemPunctuations):
+        while problemPunctuations[puncType] in userInput:
+            problemCharIndex = userInput.index(punct)
+            userInput = userInput[:problemCharIndex] + "_" + userInput[problemCharIndex+1:]
+    return userInput
+
 
 def searchYear(greatYear):
     urlYear = f'https://rateyourmusic.com/charts/top/album/{greatYear}'
@@ -31,10 +44,12 @@ def searchGenre(engagingGenre):
     return urlGenre
 
 def searchAlbum(sickAlbum, coolArtist):
+    sickAlbum = checkValid(funFilm)
     urlAlbum = f'https://rateyourmusic.com/release/album/{coolArtist}/{sickAlbum}'
     return urlAlbum
 
 def searchFilm(funFilm):
+    funFilm = checkValid(funFilm)
     urlFilm = f'https://rateyourmusic.com/film/{funFilm}'
     return urlFilm
 
