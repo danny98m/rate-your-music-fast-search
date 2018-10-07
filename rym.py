@@ -24,8 +24,7 @@ Usage:
     Conversely if no arguments are given, artist name in clipboard will be searched.
     **Adding more search terms is not worth the effort of automating**
 
-    TODO: Take care of certain punctuation issues
-    Add toto easter egg
+    TODO:
     Add to invalid punctuations - ! are a special case to look at
     check for artists and albums as well
     Add top films
