@@ -158,17 +158,22 @@ def searchRym():
         # Search by album
         elif (sys.argv[1] == "album"):
             userIn = ' '.join(sys.argv[2:])
-            splitInput = userIn.split('--')
-            album = splitInput[0]
-            album = album.split()
-            album = '_'.join(album)
-            lowerAlbum = album.lower()
+            splitInput = userIn.split('--')     # split album from artist
 
-            artist = splitInput[1]
-            artist = artist.split()
-            artist = '_'.join(artist)
-            lowerArtist = artist.lower()
+            #------Prepare Album-----------
+            album = splitInput[0]               # store album name
+            splitAlbum = album.split()          # split by space
+            joinedAlbum = '_'.join(splitAlbum)  # join by underscore
+            lowerAlbum = joinedAlbum.lower()  
+            #------------------------------
 
+            #-------Prepare Artist---------
+            artist = splitInput[1]              # store artist name
+            splitArtist = artist.split()
+            joinedArtist = '_'.join(splitArtist)
+            lowerArtist = joinedArtist.lower()
+            #------------------------------
+            
             search = searchAlbum(lowerAlbum, lowerArtist)
 
         # Top of all time
