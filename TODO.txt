@@ -1,0 +1,5 @@
+You can search genre by individual year and genre
+
+Currently you display top of all time for genre
+
+Add feature to do decades and specific year
